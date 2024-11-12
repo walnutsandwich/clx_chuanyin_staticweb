@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一梦江湖传音</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0be56d333ab4783f8fa2e90adf7a3f56";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+        
+</head>
+<body>
+    <div class="container" id="mainContainer">
+        <div class="button-status-container">
+            <button class="gr-button" id="getLatestButton">获取最新</button>
+            <select class="channel-selector" id="channelSelector" onchange="">
+                <option value="index">天问极</option>
+                <option value="pingxingfu">平行服</option>
+            </select>
+            <div id="status" class="status-container">
+                <span id="status-text" class="status"></span>
+            </div>
+            <input type="hidden" id="api-url" value="https://1300262556-2l0x99nsot.ap-guangzhou.tencentscf.com">
+        </div>
+
+        <div class="messages" id="messages-container">
+            <!-- 消息列表将在这里动态生成 -->
+        </div>
+
+        <div class="pagination" id="page-container">
+            <button class="gr-button" onclick="previousPage()">上一页</button>
+            <input type="text" id="pageInput" style="width: 50px; margin: 0 5px;">
+            <button class="gr-button" onclick="jumpToPage()">跳转</button>
+            <button class="gr-button" onclick="nextPage()">下一页</button>
+        </div>
+        <div class="feedback-text">
+            待启动
+        </div>
+    </div>
+
+    <script src="fetchMessages.js"></script>
+</body>
+</html>

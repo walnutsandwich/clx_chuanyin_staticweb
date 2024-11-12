@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一梦江湖传音</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0be56d333ab4783f8fa2e90adf7a3f56";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+        
+</head>
+<body>
+    <div class="container" id="mainContainer">
+        <div class="button-status-container">
+            <button class="gr-button" id="getLatestButton">获取最新</button>
+            <select class="channel-selector" id="channelSelector" onchange="">
+                <option value="index">天问极</option>
+                <option value="pingxingfu">平行服</option>
+            </select>
+            <div id="status" class="status-container">
+                <span id="status-text" class="status"></span>
+            </div>
+            <input type="hidden" id="api-url" value="https://1300262556-2g6rsgo16f.ap-guangzhou.tencentscf.com">
+        </div>
+
+        <div class="messages" id="messages-container">
+            <!-- 消息列表将在这里动态生成 -->
+        </div>
+
+        <div class="pagination" id="page-container">
+            <button class="gr-button" onclick="previousPage()">上一页</button>
+            <input type="text" id="pageInput" style="width: 50px; margin: 0 5px;">
+            <button class="gr-button" onclick="jumpToPage()">跳转</button>
+            <button class="gr-button" onclick="nextPage()">下一页</button>
+        </div>
+        <div class="feedback-text">
+            <a href="https://www.bilibili.com/video/BV1ESxEekEQ7" style="color: #757575;">b站关注留言</a>
+            <a href="#" id="support-author" style="color: #757575;">支持作者</a>
+            <a href="https://qm.qq.com/cgi-bin/qm/qr?k=DERsgLj33fjV5vYRaUQCxu8LQVxVPGEA&jump_from=webapi&authKey=cC9LNMh38TQrqLCKnnwcnSo//GVmnt1K/iQWOocjybyxIHbc8baHw0X5LiWqu2yv" target="_blank" style="color: #757575;">欢迎加群753025961</a>
+        </div>
+        <div id="qr-code-modal" class="modal">
+            <img id="qr-code-image" src="qrcode.jpg" alt="QR Code">
+            <span class="close-btn" >&times;</span>
+        </div>
+    </div>
+
+    <script src="fetchMessages.js"></script>
+
+</body>
+</html>

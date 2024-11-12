@@ -1,0 +1,217 @@
+/* styles.css */
+/* 全局样式 */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f5f8fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 确保 body 至少占据整个视口高度 */
+}
+
+.channel-selector {
+  font-size: 1rem;
+  padding: 0.5em;
+  margin-right: 1em;
+}
+
+.loading-indicator {
+  text-align: center;
+  padding: 20px;
+  color: #ccc;
+  font-style: italic;
+}
+
+.message.visible {
+  opacity: 1;
+}
+
+/* 容器样式 */
+.container {
+  max-width: 98%;
+  margin: 0 auto;
+  padding: 10px 5px;
+  padding-bottom: 0px;
+  flex-grow: 1; /* 让容器撑满剩余空间 */
+  display: flex;
+  flex-direction: column;
+}
+
+/* 消息列表样式 */
+.messages {
+  font-size: 16px;
+  line-height: 1.4;
+  padding: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  flex-grow: 1; /* 让消息列表撑满容器剩余空间 */
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #e1e8ed;
+  border-radius: 0;
+}
+
+/* 单条消息样式 */
+.message {
+  border-bottom: 1px solid #e1e8ed;
+  padding: 10px 5px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.message:last-child {
+  border-bottom: none;
+}
+
+.message-avatar {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+  object-fit: cover; /* 确保头像填充整个区域 */
+}
+
+.message-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.message-author {
+  font-size: 16px;
+  font-weight: bold;
+  color: #0066cc;
+}
+
+.message-date-time {
+  font-size: 14px;
+  color: #657786;
+}
+
+.message-content {
+  font-size: 16px;
+  color: #14171a;
+  white-space: pre-wrap;
+}
+
+/* 按钮样式 */
+.gr-button {
+  background-color: #1da1f2 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 8px 16px !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.gr-button:hover {
+  background-color: #0c85d0 !important;
+}
+
+/* 分页样式 */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; /* 保持一定的顶部外边距 */
+}
+
+/* 反馈文本样式 */
+.feedback-text {
+  text-align: center;
+  font-size: 12px; /* 保持原大小，或者根据需要调整 */
+  color: #888;
+  margin-top: 10px; /* 保持一定的顶部外边距 */
+  padding: 0px 0; /* 减小内边距 */
+  border-top: 1px solid #e1e8ed;
+  line-height: 1.2em; /* 控制行高，使得文本更紧凑 */
+}
+
+/* 状态容器样式 */
+.status-container {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.status-updating {
+  color: #2ecc71;
+  background-color: #e8f8f5;
+}
+
+.status-not-updating {
+  color: #e74c3c;
+  background-color: #fdedec;
+}
+
+/* 按钮和状态容器的容器 */
+.button-status-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 水平方向两端对齐 */
+  margin-bottom: 10px;
+}
+
+.modal {
+  display: none; /* 默认隐藏 */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  text-align: center; /* 居中对齐 */
+  padding-top: 10%; /* 调整顶部间距 */
+}
+
+.modal img {
+  max-width: 100%;
+  max-height: 80%;
+  display: block;
+  margin: 0 auto; /* 图片居中 */
+}
+
+.close-btn {
+  display: block;
+  margin: 20px auto; /* 上下间距 */
+  font-size: 24px; /* 放大字体 */
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.7); /* 背景色 */
+  padding: 10px 20px; /* 内边距 */
+  border-radius: 5px; /* 圆角 */
+}
+
+.feedback-text {
+  display: flex;
+  justify-content: center; /* 水平居中对齐 */
+  align-items: center; /* 垂直居中对齐 */
+  gap: 20px; /* 控制链接之间的间距 */
+  padding: 5px; /* 缩小上下范围 */
+}
+
+.feedback-text a {
+  color: #757575; /* 统一颜色 */
+  text-decoration: none; /* 去除下划线 */
+  font-weight: bold; /* 加粗字体 */
+  transition: color 0.3s; /* 平滑过渡效果 */
+  border: none; /* 去除边框 */
+  padding: 0; /* 去除内边距 */
+}
+
+.feedback-text a:hover {
+  color: #555555; /* 悬停时的深灰色 */}
